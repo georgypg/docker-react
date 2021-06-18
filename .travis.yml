@@ -1,10 +1,9 @@
 sudo: required
 services:
- - docker
+  - docker
 
- before_install:
-  - docker build -t georgypg/docker-react -f Dockerfile.dev .
+before_install:
+  - docker build -t stephengrider/docker-react -f Dockerfile.dev .
 
-  script:
-   - docker run georgypg/docker-react npm run test -- --coverage
-   
+script:
+  - docker run stephengrider/docker-react npm run test -- --coverage

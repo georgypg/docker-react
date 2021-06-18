@@ -3,10 +3,9 @@ services:
   - docker
 
 before_install:
-  - docker build -t georgypg/docker-react  .
-
-#script:
-#  - docker run -e CI=true georgypg/docker-react npm run test -- --coverage
+  - docker build -t jolsby/docker-react -f Dockerfile.dev .
+script:
+  - docker run -e CI=true georgypg/docker-react npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
